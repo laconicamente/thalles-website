@@ -46,7 +46,7 @@ export function TestimonialsSection() {
 
   const handleOpenModal = (testimonial: Testimonial) => {
     setSelectedTestimonial(testimonial);
-    setTimeLeft(10); // 10 segundos para fechar automaticamente
+    setTimeLeft(10);
   };
 
   const handleCloseModal = () => {
@@ -68,12 +68,12 @@ export function TestimonialsSection() {
         duration: 0.5,
         delay: 0.3,
       }}
-      className="relative w-full py-16"
+      className="relative w-full py-20 bg-[#f5f5f5]"
     >
       <Box className="container mx-auto px-6">
         <Box className="w-full flex justify-center items-center text-center mb-12">
           <h2 className="relative z-20 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl">
-            Depoimentos de <span style={{color: '#377394'}}>Pacientes</span>
+            Depoimentos de <span style={{color: '#297270'}}>Pacientes</span>
           </h2>
         </Box>
 
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
               <Box
                 className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(45deg, #377394, #4a9bc1)',
+                  background: 'linear-gradient(45deg, #297270, #4a9bc1)',
                   border: '3px solid #fff',
                 }}
               >
@@ -129,7 +129,7 @@ export function TestimonialsSection() {
                   <Box
                     className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
                     style={{
-                      background: 'linear-gradient(45deg, #377394, #4a9bc1)',
+                      background: 'linear-gradient(45deg, #297270, #4a9bc1)',
                     }}
                   >
                     {selectedTestimonial.name.charAt(0).toUpperCase()}

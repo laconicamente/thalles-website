@@ -1,12 +1,14 @@
 import { HeaderSection } from "./components/header-section";
 import { ContactSection } from "./components/contact-section";
 import { TestimonialsSection } from "./components/testimonials-section";
+import { AboutSection } from "./components/about-section";
 
 export default function Home() {
   return (
     <div className="font-sans">
       <main className="w-full flex flex-col row-start-2 items-center justify-center">
         <HeaderSection />
+        <AboutSection /> 
         <TestimonialsSection />
         <ContactSection />
       </main>
