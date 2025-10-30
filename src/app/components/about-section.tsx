@@ -1,12 +1,49 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Modal, IconButton, List, ListItem, ListItemIcon, ListItemText, Button, Divider } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import CloseIcon from "@mui/icons-material/Close";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import DownloadIcon from "@mui/icons-material/Download";
 import { motion } from "motion/react";
 
 export function AboutSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // Lista completa de PDFs organizados por categoria
+  const academicProductions = {
+    artigos: [
+      "43073-Texto do Artigo-163741-1-10-20201223.pdf",
+      "CA_222-Analise-epistemologica-da-ciencia-em-construcao-Thalles.pdf",
+      "O_fenomeno_da_precarizacao_do_trabalho_docente_em_.pdf",
+      "REVISTA UNIG.pdf",
+      "Revista Educação Pública - A importância das tecnologias digitais na Educação e seus desafios.pdf",
+      "Revista Educação Pública - A pedagogia engajada e a práxis da transformação do mundo – um ensaio sobre a educação libertadora.pdf",
+      "Revista Educação Pública - Escola sem Partido e o mito da escola neutra_ a importância do sentido político da educação.pdf",
+      "Revista Educação Pública - Fracasso escolar e desigualdade social_ uma perspectiva crítica e emancipatória.pdf",
+      "Revista Educação Pública - O fracasso escolar e a importância da Orientação Educacional – um diálogo necessário.pdf",
+      "Revista Educação Pública - O labor docente e a alienação do trabalho.pdf",
+      "Revista Educação Pública - Reflexões sobre a escola em ciclos no Brasil – uma análise crítica.pdf",
+      "alexandre_assis,+texto+8+OK.pdf",
+      "rscmin,+1+MILITARIZAÇÃO+DA+EDUCAÇÃO+PÚBLICA+NO+BRASIL.pdf"
+    ],
+    capitulos: [
+      "A IMPORTÂNCIA DO ENSINO DE ESPANHOL NAS ESCOLAS BRASILEIRAS.pdf",
+      "A ação dos Organismos Internacionais na Educação e seu desdobramento no Trabalho docente.pdf",
+      "ADOECIMENTO DOCENTE E PRECARIZAÇÃO DO TRABALHO DOS PROFESSORES DE EDUCAÇÃO FÍSICA DO SEGUNDO SEGMENTO DO ENSINO FUNDAMENTAL.pdf",
+      "As reformas econômico-sociais do governo de Michel Temer e do governo Bolsonaro e como elas impactaram na educação e no trabalho docente.pdf",
+      "EXPRESSÕES DE VALORIZAÇÃO DOS DIREITOS HUMANOS NA REDE SOCIAL FACEBOOK.pdf",
+      "Fraturas expostas pela pandemia escritos e experiências em educação..pdf",
+      "Refletindo sobre o Fracasso Escolar Abordagem Centrada em Alunos Multirrepetentes de Santo Antônio de PáduaRJ.pdf",
+      "Reflexões a respeito do pensamento decolonial nos estudos históricos brasileiros..pdf",
+      "Sociedade enlutada Lutas e lutos de uma sociedade na busca por educação.pdf",
+      "Vida e morte na pandemia Não sairemos da mesma forma que entramos.pdf",
+      "certificado-humanas-scientia-86.pdf",
+      '"Remédios Eu tomo vários." Adoecimen- to e medicalização docente no interior do Estado do Rio de Janeiro.pdf'
+    ]
+  };
 
   const handlePlayVideo = () => {
     if (videoRef.current) {
@@ -25,6 +62,24 @@ export function AboutSection() {
         setIsPlaying(false);
       }
     }
+  };
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleDownloadPDF = (category: string, filename: string) => {
+    const url = `/books/${category}/${filename}`;
+    window.open(url, '_blank');
+  };
+
+  const formatFileName = (filename: string) => {
+    // Remove a extensão .pdf e limita o tamanho do nome
+    return filename.replace('.pdf', '').substring(0, 80) + (filename.length > 80 ? '...' : '');
   };
 
   return (
@@ -109,7 +164,7 @@ export function AboutSection() {
                 Formado em Psicanálise pela Centro de Estudos em Terapia e Psicanálise (CETEP) e doutorando em Psicanálise, saúde e sociedade pela Universidade Veiga de Almeida (UVA). Atua como psicanalista clínico no formato online, atendendo centenas de pessoas ao redor do Brasil e brasileiros que moram em Portugal. É considerado um dos maiores psicanalistas do país a se especializar no tratamento de ansiedade, síndrome de Burnout e depressão. Venceu a categoria de melhores do ano na categoria psicanalista em 2025 em Rio das Ostras/RJ e foi profissional destaque do Sudeste e destaque do ano pela MG produções. Também atua como professor nos municípios de Rio das Ostras/RJ e Casimiro de Abreu/RJ. Possui diversos capítulos de livros publicados e artigos científicos publicados em revistas acadêmicas.
               </Typography>
               <Box className="mt-6">
-            <button style={{ cursor: 'pointer', fontSize: '11pt' }} className="px-12 py-3 rounded-full bg-[#fff] font-bold text-[#0c302f] tracking-widest uppercase transform hover:scale-105 hover:bg-[#fff] transition-colors duration-200">
+            <button onClick={handleOpenModal} style={{ cursor: 'pointer', fontSize: '11pt' }} className="px-12 py-3 rounded-full bg-[#fff] font-bold text-[#0c302f] tracking-widest uppercase transform hover:scale-105 hover:bg-[#fff] transition-colors duration-200">
                Produções acadêmicas
             </button>
               </Box>
@@ -117,6 +172,109 @@ export function AboutSection() {
           </div>
         </Box>
       </Box>
+
+      {/* Modal */}
+      <Modal open={modalOpen} onClose={handleCloseModal}>
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg" 
+             style={{ width: '90vw', maxWidth: '1000px', height: '80vh', maxHeight: '600px' }}>
+          <Box className="relative h-full flex flex-col">
+            <IconButton
+              onClick={handleCloseModal}
+              className="absolute top-2 right-2 z-10"
+              style={{ color: '#297270' }}
+            >
+              <CloseIcon />
+            </IconButton>
+            
+            <Box className="p-6 pb-2">
+              <Typography variant="h5" className="mb-2 font-bold" style={{ color: '#297270' }}>
+                Produções Acadêmicas
+              </Typography>
+              <Divider className="mb-4" />
+            </Box>
+
+            <Box className="flex-1 overflow-y-auto px-6 pb-6">
+              {/* Artigos */}
+              <Typography variant="h6" className="mb-3 font-semibold" style={{ color: '#297270' }}>
+                Artigos ({academicProductions.artigos.length})
+              </Typography>
+              
+              <Box className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
+                {academicProductions.artigos.map((filename, index) => (
+                  <ListItem 
+                    key={index} 
+                    className="border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors duration-200"
+                    onClick={() => handleDownloadPDF('artigos', filename)}
+                    style={{ marginBottom: '8px', padding: '12px' }}
+                  >
+                    <ListItemIcon>
+                      <PictureAsPdfIcon style={{ color: '#d32f2f' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={formatFileName(filename)}
+                      style={{ marginRight: '8px' }}
+                      primaryTypographyProps={{
+                        fontSize: '0.9rem',
+                        lineHeight: '1.3'
+                      }}
+                    />
+                    <IconButton 
+                      edge="end" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDownloadPDF('artigos', filename);
+                      }}
+                      style={{ color: '#297270' }}
+                    >
+                      <DownloadIcon />
+                    </IconButton>
+                  </ListItem>
+                ))}
+              </Box>
+
+              <Divider className="my-4" />
+
+              {/* Capítulos */}
+              <Typography variant="h6" className="mb-3 font-semibold" style={{ color: '#297270' }}>
+                Capítulos ({academicProductions.capitulos.length})
+              </Typography>
+              
+              <Box className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {academicProductions.capitulos.map((filename, index) => (
+                  <ListItem 
+                    key={index} 
+                    className="border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors duration-200"
+                    onClick={() => handleDownloadPDF('capitulos', filename)}
+                    style={{ marginBottom: '8px', padding: '12px' }}
+                  >
+                    <ListItemIcon>
+                      <PictureAsPdfIcon style={{ color: '#d32f2f' }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={formatFileName(filename)}
+                      style={{ marginRight: '8px' }}
+                      primaryTypographyProps={{
+                        fontSize: '0.9rem',
+                        lineHeight: '1.3'
+                      }}
+                    />
+                    <IconButton 
+                      edge="end" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDownloadPDF('capitulos', filename);
+                      }}
+                      style={{ color: '#297270' }}
+                    >
+                      <DownloadIcon />
+                    </IconButton>
+                  </ListItem>
+                ))}
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Modal>
     </motion.div>
   );
 }
