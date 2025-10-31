@@ -98,9 +98,9 @@ export function AboutSection() {
       }}
       className="relative w-full py-16 bg-[#0c302f]"
     >
-      <Box className="container mx-auto px-6" sx={{ minHeight: '25rem', position: 'relative' }}>
+      <Box className="container mx-auto px-6" sx={{ minHeight: '20rem', position: 'relative' }}>
         {/* Conteúdo principal */}
-        <Box className="max-w-6xl mx-auto relative" sx={{ top: '-1rem' }}>
+        <Box className="max-w-6xl mx-auto relative" sx={{ top: '-3rem' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative" style={{ top: '-3rem' }}>
             {/* Vídeo */}
             <motion.div
@@ -147,8 +147,7 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="w-full"
-              style={{ marginTop: '6rem' }}
+              className="w-full md:mt-10"
             >
               <h2 className="relative z-20 mb-10 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl text-[#fff]">
                 Sobre mim
