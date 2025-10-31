@@ -13,16 +13,16 @@ interface Testimonial {
 
 // Lista de depoimentos baseada nas imagens disponíveis
 const testimonials: Testimonial[] = [
-  { id: 1, name: "Ana", image: "/images/depo-1.jpeg" },
-  { id: 2, name: "Bruno", image: "/images/depo-2.jpeg" },
-  { id: 3, name: "Carla", image: "/images/depo-3.jpeg" },
-  { id: 4, name: "Diego", image: "/images/depo-4.jpeg" },
-  { id: 5, name: "Elena", image: "/images/depo-5.jpeg" },
-  { id: 6, name: "Felipe", image: "/images/depo-6.jpeg" },
-  { id: 7, name: "Gabriela", image: "/images/depo-7.jpeg" },
-  { id: 8, name: "Hugo", image: "/images/depo-8.jpeg" },
-  { id: 9, name: "Isabela", image: "/images/depo-9.jpeg" },
-  { id: 10, name: "João", image: "/images/depo-10.jpeg" },
+  { id: 2, name: "Juliane", image: "/images/depo-2.jpeg" },
+  { id: 3, name: "Ale Campos", image: "/images/depo-3.jpeg" },
+  { id: 1, name: "Barcellos Lary", image: "/images/depo-1.jpeg" },
+  { id: 7, name: "Anderson", image: "/images/depo-7.jpeg" },
+  { id: 9, name: "Rodrigues", image: "/images/depo-9.jpeg" },
+  { id: 5, name: "Alessandra", image: "/images/depo-5.jpeg" },
+  { id: 8, name: "Guilherme", image: "/images/depo-8.jpeg" },
+  { id: 6, name: "Ale M Campos", image: "/images/depo-6.jpeg" },
+  { id: 10, name: "Tabella", image: "/images/depo-10.jpeg" },
+  { id: 4, name: "Ale Campos", image: "/images/depo-4.jpeg" },
 ];
 
 export function TestimonialsSection() {

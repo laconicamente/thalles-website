@@ -98,10 +98,10 @@ export function AboutSection() {
       }}
       className="relative w-full py-16 bg-[#0c302f]"
     >
-      <Box className="container mx-auto px-6" sx={{ minHeight: '34rem', position: 'relative' }}>
+      <Box className="container mx-auto px-6" sx={{ minHeight: '25rem', position: 'relative' }}>
         {/* Conteúdo principal */}
-        <Box className="max-w-6xl mx-auto" sx={{ position: 'absolute', top: '-6rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <Box className="max-w-6xl mx-auto relative" sx={{ top: '-1rem' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative" style={{ top: '-3rem' }}>
             {/* Vídeo */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -147,12 +147,12 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="w-full" 
-              style={{marginTop: '4rem'}}
+              className="w-full"
+              style={{ marginTop: '6rem' }}
             >
-                <h2 className="relative z-20 mb-10 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl text-[#fff]">
-            Sobre mim
-          </h2>
+              <h2 className="relative z-20 mb-10 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl text-[#fff]">
+                Sobre mim
+              </h2>
               <Typography
                 variant="body1"
                 className="text-[#f4f4f4] leading-relaxed text-justify"
@@ -164,9 +164,9 @@ export function AboutSection() {
                 Formado em Psicanálise pela Centro de Estudos em Terapia e Psicanálise (CETEP) e doutorando em Psicanálise, saúde e sociedade pela Universidade Veiga de Almeida (UVA). Atua como psicanalista clínico no formato online, atendendo centenas de pessoas ao redor do Brasil e brasileiros que moram em Portugal. É considerado um dos maiores psicanalistas do país a se especializar no tratamento de ansiedade, síndrome de Burnout e depressão. Venceu a categoria de melhores do ano na categoria psicanalista em 2025 em Rio das Ostras/RJ e foi profissional destaque do Sudeste e destaque do ano pela MG produções. Também atua como professor nos municípios de Rio das Ostras/RJ e Casimiro de Abreu/RJ. Possui diversos capítulos de livros publicados e artigos científicos publicados em revistas acadêmicas.
               </Typography>
               <Box className="mt-6">
-            <button onClick={handleOpenModal} style={{ cursor: 'pointer', fontSize: '11pt' }} className="px-12 py-3 rounded-full bg-[#fff] font-bold text-[#0c302f] tracking-widest uppercase transform hover:scale-105 hover:bg-[#fff] transition-colors duration-200">
-               Produções acadêmicas
-            </button>
+                <button onClick={handleOpenModal} style={{ cursor: 'pointer', fontSize: '11pt' }} className="px-12 py-3 rounded-full bg-[#fff] font-bold text-[#0c302f] tracking-widest uppercase transform hover:scale-105 hover:bg-[#fff] transition-colors duration-200">
+                  Produções acadêmicas
+                </button>
               </Box>
             </motion.div>
           </div>
@@ -175,34 +175,29 @@ export function AboutSection() {
 
       {/* Modal */}
       <Modal open={modalOpen} onClose={handleCloseModal}>
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg" 
-             style={{ width: '90vw', maxWidth: '1000px', height: '80vh', maxHeight: '600px' }}>
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg"
+          style={{ width: '90vw', height: '90vh'}}>
           <Box className="relative h-full flex flex-col">
-            <IconButton
+          <IconButton
               onClick={handleCloseModal}
-              className="absolute top-2 right-2 z-10"
-              style={{ color: '#297270' }}
+              className="z-10 rounded-lg"
+              style={{ position: 'absolute', top: '1rem', right: '1rem', width: '2rem', height: '2rem', background: '#fff', color: '#333' }}
             >
               <CloseIcon />
             </IconButton>
-            
-            <Box className="p-6 pb-2">
-              <Typography variant="h5" className="mb-2 font-bold" style={{ color: '#297270' }}>
+
+            <Box className="p-6 pb-4">
+              <Typography variant="h5" fontWeight="bold" className="mb-2" style={{ color: '#297270' }}>
                 Produções Acadêmicas
               </Typography>
-              <Divider className="mb-4" />
             </Box>
 
             <Box className="flex-1 overflow-y-auto px-6 pb-6">
-              {/* Artigos */}
-              <Typography variant="h6" className="mb-3 font-semibold" style={{ color: '#297270' }}>
-                Artigos ({academicProductions.artigos.length})
-              </Typography>
-              
+
               <Box className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
                 {academicProductions.artigos.map((filename, index) => (
-                  <ListItem 
-                    key={index} 
+                  <ListItem
+                    key={index}
                     className="border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                     onClick={() => handleDownloadPDF('artigos', filename)}
                     style={{ marginBottom: '8px', padding: '12px' }}
@@ -210,16 +205,17 @@ export function AboutSection() {
                     <ListItemIcon>
                       <PictureAsPdfIcon style={{ color: '#d32f2f' }} />
                     </ListItemIcon>
-                    <ListItemText 
+                    <ListItemText
                       primary={formatFileName(filename)}
                       style={{ marginRight: '8px' }}
                       primaryTypographyProps={{
                         fontSize: '0.9rem',
                         lineHeight: '1.3'
                       }}
+                      className="overflow-hidden"
                     />
-                    <IconButton 
-                      edge="end" 
+                    <IconButton
+                      edge="end"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDownloadPDF('artigos', filename);
@@ -231,18 +227,10 @@ export function AboutSection() {
                   </ListItem>
                 ))}
               </Box>
-
-              <Divider className="my-4" />
-
-              {/* Capítulos */}
-              <Typography variant="h6" className="mb-3 font-semibold" style={{ color: '#297270' }}>
-                Capítulos ({academicProductions.capitulos.length})
-              </Typography>
-              
               <Box className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {academicProductions.capitulos.map((filename, index) => (
-                  <ListItem 
-                    key={index} 
+                  <ListItem
+                    key={index}
                     className="border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                     onClick={() => handleDownloadPDF('capitulos', filename)}
                     style={{ marginBottom: '8px', padding: '12px' }}
@@ -250,7 +238,7 @@ export function AboutSection() {
                     <ListItemIcon>
                       <PictureAsPdfIcon style={{ color: '#d32f2f' }} />
                     </ListItemIcon>
-                    <ListItemText 
+                    <ListItemText
                       primary={formatFileName(filename)}
                       style={{ marginRight: '8px' }}
                       primaryTypographyProps={{
@@ -258,8 +246,8 @@ export function AboutSection() {
                         lineHeight: '1.3'
                       }}
                     />
-                    <IconButton 
-                      edge="end" 
+                    <IconButton
+                      edge="end"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDownloadPDF('capitulos', filename);

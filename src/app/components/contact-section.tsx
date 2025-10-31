@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Box, Typography, Card, Modal, IconButton } from "@mui/material";
-import MapOutlined from "@mui/icons-material/MapOutlined";
 import CallEndRounded from "@mui/icons-material/CallEndRounded";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CloseIcon from "@mui/icons-material/Close";
@@ -70,8 +69,8 @@ export function ContactSection() {
         }}
         className="relative w-full"
       >
-        <Box className="container mx-auto px-6 max-w-6xl">
-          <div className="relative p-15 py-15">
+        <Box className="container mx-auto px-6 max-w-6xl pb-10">
+          <div className="relative md:p-15 md:py-15 pt-10 sm:p-2">
             <Box className={"w-full flex justify-center items-center text-center "}>
               <h2 className="relative z-20 pb-12 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl">
                 Conheça mais sobre mim e <div style={{ color: '#297270' }}>entre em contato</div>
@@ -240,18 +239,18 @@ export function ContactSection() {
         <Modal
           open={modalOpen}
           onClose={handleCloseModal}
-          className="flex items-center justify-center p-4"
+          className="flex items-center justify-center p-0"
         >
           <Box className="relative bg-white rounded-lg shadow-2xl overflow-hidden" style={{ maxWidth: '90vw', maxHeight: '90vh' }}>
             <IconButton
               onClick={handleCloseModal}
-              className="absolute top-2 right-2 z-10 bg-white bg-opacity-80 hover:bg-opacity-100"
-              style={{ color: '#297270' }}
+              className="z-10 rounded-lg"
+              style={{ position: 'absolute', top: '1rem', right: '1rem', width: '2rem', height: '2rem', background: '#fff', color: '#333' }}
             >
               <CloseIcon />
             </IconButton>
             {selectedImage && (
-              <Box className="relative p-4">
+              <Box className="relative">
                 <Image
                   src={selectedImage}
                   alt="Prêmio ampliado"
@@ -260,8 +259,8 @@ export function ContactSection() {
                   sizes="90vw"
                   className="object-contain w-auto h-auto"
                   style={{ 
-                    maxWidth: '80vw', 
-                    maxHeight: '80vh',
+                    maxWidth: '90vw', 
+                    maxHeight: '90vh',
                     width: 'auto',
                     height: 'auto'
                   }}

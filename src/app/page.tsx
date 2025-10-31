@@ -12,7 +12,7 @@ export default function Home() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center p-10 bg-[#1e271d] w-full">
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center p-10 bg-[#1d2527] w-full">
         <p className="text-sm text-white">© 2025 Thalles Azevedo - Psicanalista. Todos os direitos reservados.</p>
       </footer>
     </div>

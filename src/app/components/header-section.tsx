@@ -84,9 +84,6 @@ export function HeaderSection() {
         }}
         className="relative w-full"
       >
-        <div className="w-full overflow-hidden">
-          {/* <ContentSection /> */}
-        </div>
       </motion.div>
     </div>
   );
