@@ -13,35 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thalles Azevedo - Psicólogo e Psicanalista",
-  description: "Consultas presenciais e online",
+  title: "Thalles Azevedo - Psicanalista",
+  description: "Consultas online",
   keywords: [
-    "Psicólogo Salvador",
-    "Psicanalista Salvador",
+    "Psicanalista",
     "Terapia online",
     "Psicologia clínica",
     "Thalles Azevedo",
-    "Atendimento psicológico",
     "Psicanálise lacaniana",
     "Terapia",
-    "Pedro psicólogo",
-    "Psicólogo online",
-    "pedro",
-    "vieira",
+    "Thalles Psicanalista",
+    "Psicanalista online",
+    "thalles",
+    "azevedo",
     "psi"
   ],
   authors: [{ name: "Thalles Azevedo" }],
   openGraph: {
-    title: "Thalles Azevedo - Psicólogo e Psicanalista",
-    description: "Consultas presenciais e online em Salvador e para todo o Brasil.",
-    url: "https://pedrovieirapsi.com/",
-    siteName: "Thalles Azevedo Psicólogo",
+    title: "Thalles Azevedo - Psicanalista",
+    description: "Consultas online e para todo o Brasil.",
+    url: "https://psithalles.com/",
+    siteName: "Thalles Azevedo Psicanalista",
     images: [
       {
-        url: "https://pedrovieirapsi.com/images/pedro-vieira.png",
+        url: "https://psithalles.com/images/thalles-1.jpeg",
         width: 1464,
         height: 2174,
-        alt: "Thalles Azevedo Psicólogo"
+        alt: "Thalles Azevedo Psicanalista"
       }
     ],
     locale: "pt_BR",

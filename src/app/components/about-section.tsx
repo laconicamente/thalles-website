@@ -5,7 +5,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CloseIcon from "@mui/icons-material/Close";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import DownloadIcon from "@mui/icons-material/Download";
-import { motion } from "motion/react";
+import { motion } from "motion/react"; 
 
 export function AboutSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
