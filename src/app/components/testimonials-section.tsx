@@ -68,7 +68,7 @@ export function TestimonialsSection() {
         duration: 0.5,
         delay: 0.3,
       }}
-      className="relative w-full py-20 bg-[#f5f5f5]"
+      className="relative w-full py-14 bg-[#f5f5f5]"
     >
       <Box className="container mx-auto px-6">
         <Box className="w-full flex justify-center items-center text-center mb-12">

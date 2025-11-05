@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "build": {
+    "rootDir": "/",
+    "buildCommand": "npm run build",
+    "outputDir": "out",
+    "env": {
+      "NODE_VERSION": "18.17.0"
+    }
+  }
+}

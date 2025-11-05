@@ -30,6 +30,14 @@ export function AboutSection() {
       "rscmin,+1+MILITARIZAÇÃO+DA+EDUCAÇÃO+PÚBLICA+NO+BRASIL.pdf"
     ],
     capitulos: [
+      "“Remédios Eu tomo vários.” Adoecimento e medicalização docente no interior do Estado do Rio de Janeiro.pdf",
+      "ADOECIMENTO E MEDICALIZAÇÃO DE PROFESSORES.pdf",
+      "capitulo-humanas-scientia-86- THALLES AZEVEDO.pdf",
+      "O MEDIADOR ESCOLAR NO PROCESSO DE INCLUSÃO- THALLES AZEVEDO.pdf",
+      "TEM MEDO DE QUE- ENFRENTA- THALLES AZEVEDO.pdf",
+      "THALLES AZEVEDO- CONEXÕES ACADÊMICAS.pdf",
+      "THALLES AZEVEDO- FAROL.pdf",
+      "THALLES EDUCAR É UM ATO DE AMOR.pdf",
       "A IMPORTÂNCIA DO ENSINO DE ESPANHOL NAS ESCOLAS BRASILEIRAS.pdf",
       "A ação dos Organismos Internacionais na Educação e seu desdobramento no Trabalho docente.pdf",
       "ADOECIMENTO DOCENTE E PRECARIZAÇÃO DO TRABALHO DOS PROFESSORES DE EDUCAÇÃO FÍSICA DO SEGUNDO SEGMENTO DO ENSINO FUNDAMENTAL.pdf",
@@ -40,8 +48,6 @@ export function AboutSection() {
       "Reflexões a respeito do pensamento decolonial nos estudos históricos brasileiros..pdf",
       "Sociedade enlutada Lutas e lutos de uma sociedade na busca por educação.pdf",
       "Vida e morte na pandemia Não sairemos da mesma forma que entramos.pdf",
-      "certificado-humanas-scientia-86.pdf",
-      '"Remédios Eu tomo vários." Adoecimen- to e medicalização docente no interior do Estado do Rio de Janeiro.pdf'
     ]
   };
 
@@ -96,11 +102,11 @@ export function AboutSection() {
         duration: 0.5,
         delay: 0.3,
       }}
-      className="relative w-full py-16 bg-[#0c302f]"
+      className="relative w-full md:pt-12 bg-[#0c302f]"
     >
-      <Box className="container mx-auto px-6" sx={{ minHeight: '20rem', position: 'relative' }}>
+      <Box className="container mx-auto px-6" sx={{ minHeight: '10rem', position: 'relative' }}>
         {/* Conteúdo principal */}
-        <Box className="max-w-6xl mx-auto relative" sx={{ top: '-3rem' }}>
+        <Box className="max-w-6xl mx-auto relative sm:pt-3" sx={{ top: '-3rem' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative" style={{ top: '-3rem' }}>
             {/* Vídeo */}
             <motion.div
@@ -147,7 +153,7 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="w-full md:mt-10"
+              className="w-full md:mt-16"
             >
               <h2 className="relative z-20 mb-10 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl text-[#fff]">
                 Sobre mim
@@ -160,7 +166,7 @@ export function AboutSection() {
                   lineHeight: '1.8',
                 }}
               >
-                Formado em Psicanálise pela Centro de Estudos em Terapia e Psicanálise (CETEP) e doutorando em Psicanálise, saúde e sociedade pela Universidade Veiga de Almeida (UVA). Atua como psicanalista clínico no formato online, atendendo centenas de pessoas ao redor do Brasil e brasileiros que moram em Portugal. É considerado um dos maiores psicanalistas do país a se especializar no tratamento de ansiedade, síndrome de Burnout e depressão. Venceu a categoria de melhores do ano na categoria psicanalista em 2025 em Rio das Ostras/RJ e foi profissional destaque do Sudeste e destaque do ano pela MG produções. Também atua como professor nos municípios de Rio das Ostras/RJ e Casimiro de Abreu/RJ. Possui diversos capítulos de livros publicados e artigos científicos publicados em revistas acadêmicas.
+                Formado em Psicanálise pela Centro de Estudos em Terapia e Psicanálise (CETEP) e doutorando em Psicanálise, saúde e sociedade pela Universidade Veiga de Almeida (UVA). Atua como psicanalista clínico no formato online, atendendo centenas de pessoas ao redor do Brasil e brasileiros que moram em Portugal. Possui um trabalho diferenciado ao se especializar em tratamento de ansiedade, síndrome de Burnout e depressão. Venceu a categoria de melhores do ano na categoria psicanalista em 2025 em Rio das Ostras/RJ e foi profissional destaque do Sudeste e destaque do ano pela MG produções. Também atua como professor nos municípios de Rio das Ostras/RJ e Casimiro de Abreu/RJ. Possui diversos capítulos de livros publicados e artigos científicos publicados em revistas acadêmicas.
               </Typography>
               <Box className="mt-6">
                 <button onClick={handleOpenModal} style={{ cursor: 'pointer', fontSize: '11pt' }} className="px-12 py-3 rounded-full bg-[#fff] font-bold text-[#0c302f] tracking-widest uppercase transform hover:scale-105 hover:bg-[#fff] transition-colors duration-200">

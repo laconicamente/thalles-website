@@ -70,15 +70,15 @@ export function ContactSection() {
         className="relative w-full"
       >
         <Box className="container mx-auto px-6 max-w-6xl pb-10">
-          <div className="relative md:p-15 md:py-15 pt-10 sm:p-2">
+          <div className="relative md:p-5 mt-8 sm:p-2">
             <Box className={"w-full flex justify-center items-center text-center "}>
               <h2 className="relative z-20 pb-12 font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl">
                 Conheça mais sobre mim e <div style={{ color: '#297270' }}>entre em contato</div>
               </h2>
             </Box>
-            <Box display={"flex"} flexDirection={{ xs: "column", sm: "column", md: "row" }} gap={8} justifyContent="center" alignItems="flex-start">
+            <Box className="md:gap-8" display={"flex"} flexDirection={{ xs: "column", sm: "column", md: "row" }} justifyContent="center" alignItems="flex-start">
               <Box width={{ sm: "100%", md: "50%" }} className="flex justify-center">
-                <Box gap={3}>
+                <Box>
                   <Box mb={4} className="relative">
                     <video
                       width="360"
