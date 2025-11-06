@@ -102,12 +102,12 @@ export function AboutSection() {
         duration: 0.5,
         delay: 0.3,
       }}
-      className="relative w-full md:pt-12 bg-[#0c302f]"
+      className="relative w-full md:pt-14 bg-[#0c302f]"
     >
-      <Box className="container mx-auto px-6" sx={{ minHeight: '10rem', position: 'relative' }}>
+      <Box className="container mx-auto px-6" sx={{ minHeight: '8rem', position: 'relative' }}>
         {/* Conteúdo principal */}
-        <Box className="max-w-6xl mx-auto relative sm:pt-3" sx={{ top: '-3rem' }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative" style={{ top: '-3rem' }}>
+        <Box className="max-w-6xl mx-auto relative sm:mt-6 md:top-[-4rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative md:top-[-4rem] top-[-2rem]">
             {/* Vídeo */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
